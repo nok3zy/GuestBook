@@ -1,0 +1,45 @@
+include mixins/guestBlock
+
+doctype html
+html
+    head
+        title GuestBook
+        link(rel="stylesheet", href="/static/css/style.css")
+    body
+        header.header
+            h1 Guest Book
+        main
+            .container
+                form.container_form(action="/" method="post")
+                    .input_column
+                        input(type="text",class="name" ,name="GuestName" ,placeholder="name")
+                        input(type="text",class="content" name="Content", placeholder="content")
+                    .submit_column
+                        input(type="submit", value="")
+
+            //- .container
+            //-     .column_table
+            //-         .name_column NAME
+            //-         .content_column CONTENT
+            //-         .time_column VISIT TIME
+
+            .container 
+               
+                table.contents
+                    .table_columns
+                        td.name_column  NAME
+                        td.content_column  CONTENT
+                        td.time_column VISIT TIME
+                    
+                    if guests
+                        each guest in guests
+                            +guestBlock({
+                                name: guest.guest_name,
+                                detail:guest.content,
+                                time:guest.visit_time
+                            })
+                    else
+                        p No Datas!!
+
+
+        footer
