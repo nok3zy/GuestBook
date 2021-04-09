@@ -47,7 +47,7 @@ Dockerfile을 생성하고 이미지를 통해 Google Cloud Platform의 인스�
 
 ### 구성
 
-![/image/readme2.png](/image/readme2.png)
+![/image/readme2.jpg](/image/readme2.jpg)
 
 
 
